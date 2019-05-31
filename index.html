@@ -163,10 +163,205 @@
         <p>Perlin noise로 더 smooth한 랜덤값들을 뽑을 수 있다.</p>
         <p>자연의 물체, 자연스러운 움직임을 표현하는데 많이 사용된다.</p>
         <div align="center">
-          <img class="fragment" width="30%" data-src="assets/terrain.png">
-          <img class="fragment" width="30%" data-src="assets/heart.png">
+          <img class="fragment" width="30%" data-src="assets/terrain.gif">
+          <img class="fragment" width="30%" data-src="assets/heart.gif">
           <img class="fragment" width="30%" data-src="assets/smoke.png">
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>모든 움직임의 원천</p>
+        <p>어떠한 물체의 움직임은 그 물체에 작용하는 여러개의 힘의 합으로 표현할 수 있다.</p>
+        <p>위치, 속도, 가속도, 그리고 힘 간의 관계에 대한 이해가 중요하다.</p>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>위치 = 위치 + 속도</p>
+        <div align="center">
+          <img class="fragment fade-in-then-out" width="80%" data-src="assets/position.png"
+               style="position: absolute;">
+          <img class="fragment" width="80%" data-src="assets/position2.png">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>위치 = 위치 + 속도</p>
+        <p>속도 = 속도 + 가속도</p>
+        <div align="center">
+          <img class="fragment fade-in-then-out" width="80%" data-src="assets/velocity.png"
+               style="position: absolute;">
+          <img class="fragment" width="80%" data-src="assets/velocity2.png">
+        </div>
+      </div>
+    </section>
+
+    <section data-transition="slide-in none">
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>위치 = 위치 + 속도</p>
+        <p>속도 = 속도 + 가속도</p>
+        <p>가속도 = 가속도 + 힘</p>
+        <div align="center">
+          <img class="fragment fade-in-then-out" width="80%" data-src="assets/acceleration.png"
+               style="position: absolute;">
+          <img class="fragment fade-in-then-out" width="80%" data-src="assets/acceleration2.png"
+               style="position: absolute;">
+          <img class="fragment" width="80%" data-src="assets/acceleration3.png">
+          <p class="fragment">가속도는 여러 힘을 모아주는 역할!</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-transition="none">
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>위치 = 위치 + 속도</p>
+        <p>속도 = 속도 + 가속도</p>
+        <p><span style="color: green;">가속도</span> = 가속도 + <b style="color: orangered;">힘</b></p>
+        <div align="center">
+          <img width="80%" data-src="assets/acceleration3.png">
+          <p>가속도는 여러 힘을 모아주는 역할!</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-transition="none">
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>위치 = 위치 + 속도</p>
+        <p><span style="color: dodgerblue;">속도</span> = 속도 + <span style="color: green;">가속도</span></p>
+        <p><span style="color: green;">가속도</span> = 가속도 + <b style="color: orangered;">힘</b></p>
+        <div align="center">
+          <img width="80%" data-src="assets/acceleration3.png">
+          <p >가속도는 여러 힘을 모아주는 역할!</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-transition="none">
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>⛳위치 = 위치 + <span style="color: dodgerblue;">속도</span></p>
+        <p><span style="color: dodgerblue;">속도</span> = 속도 + <span style="color: green;">가속도</span></p>
+        <p><span style="color: green;">가속도</span> = 가속도 + <b style="color: orangered;">힘</b></p>
+        <div align="center">
+          <img width="80%" data-src="assets/acceleration3.png">
+          <p >가속도는 여러 힘을 모아주는 역할!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <div align="center">
+        <img width="40%" data-src="assets/ship.png">
+      </div>
+    </section>
+
+    <section class="center">
+      <div align="center">
+        <pre><code class="hljs" data-trim>
+this.acceleration.mult(0) // 가속도 초기화
+
+this.acceleration.add(this.getBoostingForce()) // 가속도 = 가속도 + 힘
+
+this.velocity.add(this.acceleration) // 속도 = 속도 + 가속도
+this.pos.add(this.velocity) // 위치 = 위치 + 속도
+          </code></pre>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>공기 저항</p>
+        <div align="center">
+          <img class="fragment" width="50%" data-src="assets/air-resistance-math.png">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>공기 저항</p>
+        <div align="center">
+          <img width="80%" data-src="assets/air-resistance-math2.png">
+          <pre class="fragment"><code class="hljs" data-trim>
+const c = 0.1 // constant c
+const objectSpeed = velocity.magnitude() // v
+const dragMagnitude = c * objectSpeed * objectSpeed // 공식의 첫 부분
+const oppositeDirection = velocity.direction().inverse() // 공식의 둘째 부분
+const dragForce = dragMagnitude * oppositeDirection
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <p>공기 저항</p>
+        <div align="center">
+          <pre><code class="hljs" data-trim>
+this.acceleration.mult(0) // 가속도 초기화
+
+this.acceleration.add(this.getBoostingForce()) // 가속도 = 가속도 + 힘
+this.acceleration.add(this.getAirResistanceForce()) // 가속도 = 가속도 + 힘
+
+this.velocity.add(this.acceleration) // 속도 = 속도 + 가속도
+this.pos.add(this.velocity) // 위치 = 위치 + 속도
+
+function getAirResistanceForce(): number {
+  const c = 0.1 // constant c
+  const objectSpeed = this.velocity.magnitude() // v
+  const dragMagnitude = c * objectSpeed * objectSpeed // 공식의 첫 부분
+  const oppositeDirection = this.velocity.direction().inverse() // 공식의 둘째 부분
+  return dragMagnitude * oppositeDirection
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <div align="center">
+        <img width="40%" data-src="assets/ship.png">
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>Force (힘)</h3>
+        <div class="fragment">
+          <p>위치 = 위치 + 속도</p>
+          <p>속도 = 속도 + 가속도</p>
+          <p>가속도 = 가속도 + <span class="fragment highlight-red">힘</span></p>
+        </div>
+        <p class="fragment">힘을 조정함으로써 모든 움직임을 표현할 수 있다.</p>
+      </div>
+      <div align="center">
+        <img class="fragment" width="30%" data-src="assets/solar-system.gif">
+        <img class="fragment" width="30%" data-src="assets/pendulum.gif">
+        <img class="fragment" width="30%" data-src="assets/angrybird.gif">
+      </div>
+    </section>
+
+    <section>
+      <div align="left" style="font-size: xx-large;">
+        <h3>정리</h3>
+        <p class="fragment">자연을 모방하기 위한 두 기반 요소: 랜덤과 힘</p>
+        <p class="fragment">Perlin noise로 더 부드러운 랜덤값들의 연속값들을 추출할 수 있다.</p>
+        <p class="fragment">물체의 움직임은 힘(force)에서부터 시작된다.</p>
+        <p class="fragment">이 기초 원리들로 무엇을 만들어볼 수 있을까?</p>
       </div>
     </section>
 
